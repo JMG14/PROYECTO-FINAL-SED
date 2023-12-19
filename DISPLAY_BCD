@@ -55,7 +55,7 @@ static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 void Display_Port(uint8_t data)
-{
+{ //ESTA FUNCION EXTRAE EL BIT CORRESPONDIENTE AL PIN O SEGMENTO PARA VER SI ES UN "1" O UN "0" Y ENCENDER EL SEGMENTO CORRESPONDIENTE. Multiplica la máscara por el bit correspondiente y lo desplaza a la derecha para ver si es un 1 o un o
 	HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, (((data & 0x01) >> 0) & 0x01));
 	HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, (((data & 0x02) >> 1) & 0x01));
 	HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, (((data & 0x04) >> 2) & 0x01));
